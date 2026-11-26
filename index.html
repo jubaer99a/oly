@@ -1,0 +1,1444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Oly – La Española Extra Virgin Olive Oil</title>
+    <meta
+      name="description"
+      content="Oly brings 100% original La Española extra virgin olive oil from Spain to Bangladesh. Cold pressed, halal and natural."
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --g: #0c2a1c;
+        --ol: #3b4519;
+        --w: #fbfaf4;
+        --gold: #d4b24c;
+        --bk: #070907;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      body {
+        margin: 0;
+        background: var(--g);
+        color: var(--w);
+        font-family: "Manrope", sans-serif;
+        overflow-x: hidden;
+      }
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+      .tex {
+        background:
+          radial-gradient(
+            900px 500px at 20% 0%,
+            rgba(91, 106, 42, 0.35),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 500px at 90% 100%,
+            rgba(20, 61, 41, 0.9),
+            transparent 60%
+          ),
+          linear-gradient(160deg, var(--g), #09190f 70%);
+      }
+      .light {
+        background: var(--w);
+        color: var(--g);
+      }
+      .tex2 {
+        background: linear-gradient(180deg, var(--ol), #2a3212);
+      }
+      .grain {
+        position: relative;
+      }
+      .grain::after,
+      .gr::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.08;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      .rv {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s,
+          transform 0.8s;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      .float {
+        animation: fl 4s ease-in-out infinite;
+      }
+      @keyframes fl {
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      .bob {
+        animation: bob 1.6s ease-in-out infinite;
+      }
+      @keyframes bob {
+        50% {
+          transform: translateY(10px);
+        }
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--gold);
+        color: var(--g);
+        font-weight: 600;
+        padding: 0.7rem 1.4rem;
+        border-radius: 999px;
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s,
+          background 0.25s;
+        cursor: pointer;
+        border: 0;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(212, 178, 76, 0.35);
+        background: #e4c765;
+      }
+      .btn:focus-visible,
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+      .card {
+        border-radius: 1.5rem;
+        transition:
+          transform 0.35s,
+          box-shadow 0.35s;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 40px rgba(12, 42, 28, 0.25);
+      }
+      /* benefits */
+      .bsec {
+        background:
+          radial-gradient(
+            800px 400px at 85% 0%,
+            rgba(20, 61, 41, 0.5),
+            transparent 60%
+          ),
+          var(--bk);
+      }
+      .ben {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1.2rem;
+        padding: 1.6rem;
+        background: #10140e;
+        border: 1px solid rgba(251, 250, 244, 0.09);
+        transition:
+          transform 0.4s,
+          border-color 0.4s,
+          box-shadow 0.4s;
+        isolation: isolate;
+      }
+      .ben::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s;
+        background:
+          radial-gradient(
+            circle at 20% 0%,
+            rgba(212, 178, 76, 0.18),
+            transparent 55%
+          ),
+          linear-gradient(145deg, #000 10%, #0c2a1c 120%);
+      }
+      .ben::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+      }
+      .ben:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 178, 76, 0.55);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      }
+      .ben:hover::before,
+      .ben:hover::after {
+        opacity: 1;
+      }
+      .ben .ic {
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 0.9rem;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 178, 76, 0.25),
+          rgba(91, 106, 42, 0.2)
+        );
+        color: var(--gold);
+        margin-bottom: 1rem;
+        transition: transform 0.4s;
+      }
+      .ben:hover .ic {
+        transform: rotate(-8deg) scale(1.08);
+      }
+      .faq {
+        border: 1px solid rgba(251, 250, 244, 0.15);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+      .faq:hover {
+        background: linear-gradient(
+          120deg,
+          rgba(0, 0, 0, 0.45),
+          rgba(12, 42, 28, 0.7)
+        );
+      }
+      .faq .a {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s;
+      }
+      .faq.open .a {
+        grid-template-rows: 1fr;
+      }
+      .faq .a > div {
+        overflow: hidden;
+      }
+      .faq .pl {
+        transition: transform 0.3s;
+      }
+      .faq.open .pl {
+        transform: rotate(45deg);
+      }
+      .ov {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.4s,
+          visibility 0.4s;
+        overflow-y: auto;
+      }
+      .ov.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      .ov .in2 {
+        transform: translateY(30px) scale(0.98);
+        transition: transform 0.45s;
+      }
+      .ov.show .in2 {
+        transform: none;
+      }
+      .pay {
+        border: 1.5px solid rgba(12, 42, 28, 0.2);
+        border-radius: 0.8rem;
+        padding: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: 0.2s;
+        font-weight: 600;
+      }
+      input:checked + .pay {
+        border-color: var(--g);
+        background: var(--g);
+        color: #fff;
+      }
+      .fld {
+        width: 100%;
+        border: 1.5px solid rgba(12, 42, 28, 0.2);
+        border-radius: 0.8rem;
+        padding: 0.7rem 0.9rem;
+        background: #fff;
+        color: var(--g);
+        font: inherit;
+      }
+      .hl {
+        display: block;
+        will-change: transform;
+      }
+      .stp {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1.5px solid var(--g);
+        font-weight: 600;
+        line-height: 1;
+      }
+      .stp:hover {
+        background: var(--g);
+        color: #fff;
+      }
+      .fl a {
+        transition: color 0.2s;
+      }
+      .fl a:hover {
+        color: var(--gold);
+      }
+      .faq.open {
+        background: linear-gradient(120deg, #000 0%, #0c2a1c 60%, #3b4519 130%);
+        border-color: rgba(212, 178, 76, 0.65);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+      }
+      .faq.open > button {
+        color: var(--gold);
+      }
+      @keyframes sp {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .rot {
+        transform-origin: 60px 60px;
+        animation: sp 34s linear infinite;
+      }
+      .orn {
+        display: block;
+        width: 190px;
+        height: 18px;
+      }
+      ::selection {
+        background: var(--gold);
+        color: var(--g);
+      }
+      #sp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        z-index: 70;
+        background: linear-gradient(90deg, var(--ol), var(--gold));
+      }
+      .rev {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-radius: 1.4rem;
+        padding: 1.8rem;
+        background: #fff;
+        border: 1px solid rgba(12, 42, 28, 0.12);
+        transition:
+          opacity 0.8s,
+          transform 0.45s,
+          border-color 0.45s,
+          box-shadow 0.45s,
+          color 0.45s;
+      }
+      .rev::before,
+      .rev::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      .rev::before {
+        background:
+          radial-gradient(
+            circle at 15% 0%,
+            rgba(212, 178, 76, 0.2),
+            transparent 55%
+          ),
+          linear-gradient(145deg, #000 10%, #0c2a1c 125%);
+      }
+      .rev::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+      }
+      .rev:hover {
+        transform: translateY(-6px);
+        color: var(--w);
+        border-color: rgba(212, 178, 76, 0.6);
+        box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+      }
+      .rev:hover::before,
+      .rev:hover::after {
+        opacity: 1;
+      }
+      .rev .qm {
+        color: rgba(212, 178, 76, 0.55);
+        transition: color 0.4s;
+      }
+      .rev:hover .qm {
+        color: var(--gold);
+      }
+      .lv {
+        position: fixed;
+        z-index: 40;
+        pointer-events: none;
+        width: clamp(80px, 15vw, 210px);
+        opacity: 0.85;
+      }
+      .lv svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        transform-origin: 0 0;
+        animation: sway 7s ease-in-out infinite;
+      }
+      @keyframes sway {
+        50% {
+          transform: rotate(2.5deg);
+        }
+      }
+      .lv.tl {
+        top: calc(4rem + env(safe-area-inset-top, 0px));
+        left: 0;
+      }
+      .lv.tr {
+        top: calc(4rem + env(safe-area-inset-top, 0px));
+        right: 0;
+        transform: scaleX(-1);
+      }
+      .lv.bl {
+        bottom: env(safe-area-inset-bottom, 0px);
+        left: 0;
+        transform: scaleY(-1);
+      }
+      .lv.br {
+        bottom: env(safe-area-inset-bottom, 0px);
+        right: 0;
+        transform: scale(-1, -1);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="gl" x1="0" x2="1">
+          <stop offset="0" stop-color="#1d4a2c" />
+          <stop offset=".4" stop-color="#4f7a2b" />
+          <stop offset="1" stop-color="#0f2f1c" />
+        </linearGradient>
+        <symbol id="bt" viewBox="0 0 120 320">
+          <rect x="48" y="4" width="24" height="26" rx="4" fill="#d4b24c" />
+          <path
+            d="M50 30h20v38c0 14 34 26 34 62v170c0 8-6 14-14 14H30c-8 0-14-6-14-14V130c0-36 34-48 34-62z"
+            fill="url(#gl)"
+          />
+          <rect x="24" y="170" width="72" height="104" rx="6" fill="#fbfaf4" />
+          <rect x="24" y="170" width="72" height="8" fill="#d4b24c" />
+          <g fill="#143d29">
+            <text
+              x="60"
+              y="206"
+              font-size="22"
+              font-weight="800"
+              text-anchor="middle"
+              font-family="serif"
+            >
+              OLY
+            </text>
+            <text x="60" y="224" font-size="8" text-anchor="middle">
+              EXTRA VIRGIN
+            </text>
+            <text x="60" y="238" font-size="7" text-anchor="middle">
+              OLIVE OIL
+            </text>
+          </g>
+        </symbol>
+        <symbol id="orn" viewBox="0 0 220 20">
+          <path
+            d="M0 10H60M160 10H220"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity=".5"
+          />
+          <g fill="currentColor">
+            <path d="M110 2c-6 3-9 8-9 8s3 5 9 8c6-3 9-8 9-8s-3-5-9-8z" />
+            <g opacity=".75">
+              <path
+                d="M92 10c-4-5-9-6-13-5 2 3 6 6 13 5zM128 10c4-5 9-6 13-5-2 3-6 6-13 5zM74 10c-4-5-8-6-12-5 2 3 6 6 12 5zM146 10c4-5 8-6 12-5-2 3-6 6-12 5z"
+              />
+            </g>
+            <circle cx="50" cy="10" r="1.6" />
+            <circle cx="170" cy="10" r="1.6" />
+          </g>
+        </symbol>
+        <symbol id="br" viewBox="0 0 200 200">
+          <defs><path id="lfp" d="M0 0C8-9 26-9 36 0C26 9 8 9 0 0z" /></defs>
+          <path
+            d="M0 0C55 18 100 60 130 125"
+            fill="none"
+            stroke="#6b5a2f"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <use
+            href="#lfp"
+            transform="translate(26 9) rotate(-40)"
+            fill="#5f8a32"
+          />
+          <use
+            href="#lfp"
+            transform="translate(34 13) rotate(55)"
+            fill="#476f26"
+          />
+          <use
+            href="#lfp"
+            transform="translate(58 25) rotate(-25)"
+            fill="#5f8a32"
+          />
+          <use
+            href="#lfp"
+            transform="translate(64 28) rotate(75)"
+            fill="#476f26"
+          />
+          <use
+            href="#lfp"
+            transform="translate(86 50) rotate(-10)"
+            fill="#6f9a3a"
+          />
+          <use
+            href="#lfp"
+            transform="translate(90 54) rotate(100)"
+            fill="#476f26"
+          />
+          <use
+            href="#lfp"
+            transform="translate(108 82) rotate(15)"
+            fill="#5f8a32"
+          />
+          <use
+            href="#lfp"
+            transform="translate(112 88) rotate(125)"
+            fill="#6f9a3a"
+          />
+          <use
+            href="#lfp"
+            transform="translate(130 125) rotate(70)"
+            fill="#5f8a32"
+          />
+          <ellipse
+            cx="50"
+            cy="36"
+            rx="5"
+            ry="7"
+            fill="#8a9a45"
+            transform="rotate(-20 50 36)"
+          />
+          <ellipse
+            cx="102"
+            cy="70"
+            rx="5"
+            ry="7"
+            fill="#8a9a45"
+            transform="rotate(-25 102 70)"
+          />
+        </symbol>
+        <symbol id="lf" viewBox="0 0 24 24">
+          <path
+            d="M5 19C5 9 11 4 20 4c0 9-5 15-15 15zM5 19l9-9"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="lv tl" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><use href="#br" /></svg>
+    </div>
+    <div class="lv tr" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><use href="#br" /></svg>
+    </div>
+    <div class="lv bl" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><use href="#br" /></svg>
+    </div>
+    <div class="lv br" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><use href="#br" /></svg>
+    </div>
+    <header
+      id="hd"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+      style="padding-top: env(safe-area-inset-top, 0px)"
+    >
+      <div
+        class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#top"
+          class="flex items-center gap-2 serif text-2xl font-extrabold"
+          ><svg class="w-7 h-7 text-[#d4b24c]"><use href="#lf" /></svg>Oly</a
+        >
+        <nav class="hidden md:flex gap-8 text-sm fl">
+          <a href="#about">Our story</a><a href="#benefits">Benefits</a
+          ><a href="#products">Shop</a><a href="#reviews">Reviews</a
+          ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button class="btn !py-2 !px-4 text-sm" data-order="m500">
+            Order now
+          </button>
+          <button id="mo" class="md:hidden p-2" aria-label="Open menu">
+            <svg
+              width="26"
+              height="26"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 7h20M3 13h20M3 19h14" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="mm"
+      class="ov tex flex flex-col items-center justify-center gap-7 text-3xl serif"
+    >
+      <button
+        id="mc"
+        class="absolute right-5 p-2"
+        style="top: calc(1rem + env(safe-area-inset-top, 0px))"
+        aria-label="Close menu"
+      >
+        <svg
+          width="30"
+          height="30"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 5l20 20M25 5L5 25" />
+        </svg>
+      </button>
+      <a href="#about">Our story</a><a href="#benefits">Benefits</a
+      ><a href="#products">Shop</a><a href="#reviews">Reviews</a
+      ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <button class="btn mt-4 !text-base" data-order="m500">Order now</button>
+    </div>
+
+    <main id="top">
+      <section
+        class="tex grain relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      >
+        <div
+          class="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none serif font-extrabold leading-[.85] text-center"
+          aria-hidden="true"
+          style="
+            font-size: clamp(4.5rem, 22vw, 18rem);
+            color: rgba(251, 250, 244, 0.92);
+          "
+        >
+          <span class="hl" id="t1">PURE</span
+          ><span class="hl" id="t2" style="color: #d4b24c">OLIVE</span>
+        </div>
+        <div class="relative z-10 flex flex-col items-center px-5 pb-24">
+          <div class="relative float">
+            <img
+              src="https://laespanolaoliveoil.com/wp-content/uploads/2024/10/305625_413043_LE_GLASS_500ML_VEX.png"
+              alt="La Española Extra Virgin Olive Oil 500ml"
+              referrerpolicy="no-referrer"
+              onerror="fb(this)"
+              class="sm:w-[16vw] w-[40vw] mt-12 drop-shadow-[0_30px_40px_rgba(0,0,0,.55)]"
+            />
+            <div
+              class="absolute -right-10 sm:-right-24 top-6 w-28 h-28 sm:w-36 sm:h-36"
+              style="animation: fl 3s ease-in-out infinite"
+            >
+              <svg
+                viewBox="0 0 120 120"
+                class="w-full h-full drop-shadow-xl"
+                role="img"
+                aria-label="100% natural, cold pressed, product of Spain"
+              >
+                <defs>
+                  <path
+                    id="cp"
+                    d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"
+                  />
+                </defs>
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="58"
+                  fill="#071a10"
+                  stroke="#d4b24c"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="36"
+                  fill="none"
+                  stroke="#d4b24c"
+                  stroke-opacity=".45"
+                  stroke-width=".8"
+                />
+                <g class="rot">
+                  <text font-size="7.5" fill="#d4b24c" font-weight="600">
+                    <textPath
+                      href="#cp"
+                      textLength="290"
+                      lengthAdjust="spacing"
+                    >
+                      100% NATURAL · COLD PRESSED · PRODUCT OF SPAIN ·
+                    </textPath>
+                  </text>
+                </g>
+                <use
+                  href="#lf"
+                  x="47"
+                  y="28"
+                  width="26"
+                  height="26"
+                  style="color: #d4b24c"
+                />
+                <text
+                  x="60"
+                  y="73"
+                  text-anchor="middle"
+                  font-size="15"
+                  font-family="Fraunces,serif"
+                  font-weight="700"
+                  fill="#fbfaf4"
+                >
+                  100%
+                </text>
+                <text
+                  x="60"
+                  y="85"
+                  text-anchor="middle"
+                  font-size="6.5"
+                  letter-spacing="1.6"
+                  fill="#fbfaf4"
+                >
+                  NATURAL
+                </text>
+              </svg>
+            </div>
+          </div>
+          <p class="mt-12 text-center max-w-md text-lg opacity-90">
+            Sun-ripened Spanish olives, cold pressed into the first drop.
+          </p>
+          
+        </div>
+        <a
+          href="#about"
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 bob"
+          aria-label="Scroll down"
+          ><svg
+            width="28"
+            height="44"
+            viewBox="0 0 28 44"
+            fill="none"
+            stroke="#fbfaf4"
+            stroke-width="2"
+          >
+            <rect x="2" y="2" width="24" height="40" rx="12" />
+            <circle cx="14" cy="14" r="3" fill="#d4b24c" stroke="none" /></svg
+        ></a>
+      </section>
+
+      <section id="about" class="light py-20 px-5">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div class="rv">
+            <h2 class="serif text-3xl md:text-4xl font-bold mb-4">
+              From Spain, straight to your kitchen
+            </h2>
+            <p class="leading-8 opacity-80">
+              Oly brings 100% original La Española olive oil from Spain to
+              Bangladesh at a fair price. We import directly, so there are no
+              middlemen and no compromise on quality.
+            </p>
+          </div>
+          <ol class="rv space-y-4">
+            <li class="flex gap-4">
+              <span
+                class="w-10 h-10 shrink-0 rounded-full bg-[#143d29] text-white grid place-items-center font-bold"
+                >1</span
+              >
+              <p>
+                <b>Picked.</b> Ripe olives are selected and harvested by hand.
+              </p>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="w-10 h-10 shrink-0 rounded-full bg-[#143d29] text-white grid place-items-center font-bold"
+                >2</span
+              >
+              <p>
+                <b>Cold pressed.</b> The oil is extracted without chemicals or
+                excess heat.
+              </p>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="w-10 h-10 shrink-0 rounded-full bg-[#143d29] text-white grid place-items-center font-bold"
+                >3</span
+              >
+              <p>
+                <b>100% halal and natural.</b> Purely plant-based, with no
+                additives.
+              </p>
+            </li>
+            <li class="flex gap-4">
+              <span
+                class="w-10 h-10 shrink-0 rounded-full bg-[#143d29] text-white grid place-items-center font-bold"
+                >4</span
+              >
+              <p>
+                <b>Delivered sealed.</b> It reaches you in a glass bottle,
+                untouched.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="benefits" class="bsec py-24 px-5">
+        <div class="max-w-6xl mx-auto">
+          <div class="rv max-w-2xl mb-12">
+            <h2 class="serif text-3xl md:text-5xl font-bold mb-4">
+              What olive oil does for you
+            </h2>
+            <p class="opacity-70 leading-7">
+              Good fats, strong antioxidants and a long record of research. Here
+              is what it can do inside and out.
+            </p>
+          </div>
+          <h3
+            class="rv serif text-xl font-bold mb-5 flex items-center gap-3 text-[#d4b24c]"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                d="M15 26S4 19 4 11a6 6 0 0111-3 6 6 0 0111 3c0 8-11 15-11 15z"
+              /></svg
+            >Health benefits
+          </h3>
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16"
+            id="b1"
+          ></div>
+          <h3
+            class="rv serif text-xl font-bold mb-5 flex items-center gap-3 text-[#d4b24c]"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M15 4c6 7 9 10 9 15a9 9 0 01-18 0c0-5 3-8 9-15z" /></svg
+            >Skin and hair care
+          </h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="b2"></div>
+        </div>
+      </section>
+
+      <section class="light py-20 px-5">
+        <div class="max-w-4xl mx-auto text-center rv">
+          <h2 class="serif text-3xl md:text-4xl font-bold mb-4">
+            Who is Oly for?
+          </h2>
+          <p class="leading-8 opacity-80 mb-8">
+            For people who care about their health, want to feel better, and
+            look closely at what goes on their plate.
+          </p>
+          <div class="grid sm:grid-cols-3 gap-4 text-left">
+            <div class="card bg-[#eef1e2] p-6">
+              <h3 class="serif font-bold mb-2">Health-conscious families</h3>
+              <p class="text-sm opacity-80">
+                Looking after their hearts with every daily meal.
+              </p>
+            </div>
+            <div class="card bg-[#eef1e2] p-6">
+              <h3 class="serif font-bold mb-2">Fitness enthusiasts</h3>
+              <p class="text-sm opacity-80">
+                Focused on healthy fats and weight control.
+              </p>
+            </div>
+            <div class="card bg-[#eef1e2] p-6">
+              <h3 class="serif font-bold mb-2">Natural care lovers</h3>
+              <p class="text-sm opacity-80">
+                Prefer pure ingredients for skin and hair.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="tex grain relative py-20 px-5">
+        <div class="relative z-10 max-w-6xl mx-auto">
+          <h2 class="rv serif text-3xl md:text-4xl font-bold text-center mb-2">
+            Choose your Oly
+          </h2>
+          <p class="text-center opacity-80 mb-12">
+            Up to 5 of each size per order. Buy both together and save 10%.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6" id="pg"></div>
+        </div>
+      </section>
+
+      <section id="reviews" class="light py-20 px-5">
+        <div class="max-w-6xl mx-auto">
+          <svg
+            width="0"
+            height="0"
+            style="position: absolute"
+            aria-hidden="true"
+          >
+            <symbol id="st" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"
+              />
+            </symbol>
+          </svg>
+          <h2 class="rv serif text-3xl md:text-4xl font-bold text-center mb-2">
+            Loved by home cooks
+          </h2>
+          <p class="rv text-center opacity-70 mb-12">
+            Words from customers who made Oly part of their kitchen.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6" id="rv3"></div>
+        </div>
+      </section>
+
+      <section id="faq" class="tex2 py-20 px-5">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-10">
+          <div class="rv">
+            <h2 class="serif text-3xl md:text-4xl font-bold mb-3">
+              Common questions
+            </h2>
+            <p class="opacity-80 leading-7">
+              Everything you may want to know before ordering. Anything else,
+              send us a message below.
+            </p>
+          </div>
+          <div class="space-y-3" id="fq"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="light py-20 px-5">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+          <div class="rv">
+            <h2 class="serif text-3xl md:text-4xl font-bold mb-4">
+              Get in touch
+            </h2>
+            <p class="leading-8 opacity-80 mb-4">
+              Questions, wholesale orders or feedback, write to us and we will
+              reply quickly.
+            </p>
+            <p class="opacity-80">hello@oly.example<br />+880 1XXX-XXXXXX</p>
+          </div>
+          <form id="cf" class="rv space-y-3">
+            <input class="fld" required placeholder="Your name" /><input
+              class="fld"
+              required
+              placeholder="Phone or email"
+            /><textarea
+              class="fld"
+              rows="4"
+              required
+              placeholder="Your message"
+            ></textarea>
+            <button class="btn !bg-[#143d29] !text-white" type="submit">
+              Send message
+            </button>
+            <p id="cm" class="text-sm font-medium"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#050805] border-t border-white/10 pt-16 pb-8 px-5">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-10 md:grid-cols-[1.6fr_1fr_1fr_1.2fr] fl">
+          <div>
+            <a
+              href="#top"
+              class="flex items-center gap-2 serif text-3xl font-extrabold mb-4"
+              ><svg class="w-8 h-8 text-[#d4b24c]"><use href="#lf" /></svg
+              >Oly</a
+            >
+            <p class="text-sm leading-7 opacity-60 max-w-xs">
+              Authentic La Española extra virgin olive oil, imported from Spain
+              and delivered across Bangladesh.
+            </p>
+          </div>
+          <div>
+            <h4 class="serif font-bold mb-4">Explore</h4>
+            <ul class="space-y-3 text-sm opacity-70">
+              <li><a href="#about">Our story</a></li>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#products">Shop</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="serif font-bold mb-4">Shop</h4>
+            <ul class="space-y-3 text-sm opacity-70">
+              <li><a href="#products">500 ml bottle</a></li>
+              <li><a href="#products">1000 ml bottle</a></li>
+              <li><a href="#products">Combo pack</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="serif font-bold mb-4">Contact</h4>
+            <ul class="space-y-3 text-sm opacity-70">
+              <li><a href="#contact">hello@oly.example</a></li>
+              <li>+880 1XXX-XXXXXX</li>
+              <li>Dhaka, Bangladesh</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between text-xs opacity-60"
+        >
+          <p>© 2026 Oly. All rights reserved.</p>
+          <p>Pay with bKash, Nagad or cash on delivery</p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="om"
+      class="ov light"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Order form"
+    >
+      <div class="in2 max-w-5xl mx-auto px-5 py-6">
+        <div class="flex justify-end">
+          <button
+            id="oc"
+            class="p-2 rounded-full hover:bg-black/5"
+            aria-label="Close"
+          >
+            <svg
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 5l18 18M23 5L5 23" />
+            </svg>
+          </button>
+        </div>
+        <div id="of" class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="serif text-2xl font-bold mb-4">Your order</h2>
+            <div id="ol" class="space-y-3"></div>
+            <div class="mt-5 p-4 rounded-2xl bg-[#eef1e2] space-y-1 text-sm">
+              <div class="flex justify-between">
+                <span>Subtotal</span><span id="st"></span>
+              </div>
+              <div class="flex justify-between text-[#5b6a2a]">
+                <span>Combo discount (10%)</span><span id="ds"></span>
+              </div>
+              <div
+                class="flex justify-between font-bold text-lg pt-2 border-t border-black/10"
+              >
+                <span>Total</span><span id="tt"></span>
+              </div>
+            </div>
+          </div>
+          <form id="fo" class="space-y-3">
+            <h2 class="serif text-2xl font-bold">Delivery details</h2>
+            <input class="fld" required placeholder="Full name" /><input
+              class="fld"
+              required
+              type="tel"
+              pattern="[0-9+ ]{11,15}"
+              title="Enter a valid phone number"
+              placeholder="Phone number"
+            /><textarea
+              class="fld"
+              required
+              rows="2"
+              placeholder="Address"
+            ></textarea
+            ><textarea
+              class="fld"
+              rows="2"
+              placeholder="Additional info (optional)"
+            ></textarea>
+            <fieldset>
+              <legend class="font-semibold mb-2">Payment method</legend>
+              <div class="grid grid-cols-3 gap-2">
+                <label
+                  ><input type="radio" name="pm" class="sr-only" checked /><span
+                    class="pay"
+                    ><span style="color: #e2136e">bKash</span></span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="pm" class="sr-only" /><span
+                    class="pay"
+                    ><span style="color: #f6921e">Nagad</span></span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="pm" class="sr-only" /><span
+                    class="pay"
+                    >💵 COD</span
+                  ></label
+                >
+              </div>
+            </fieldset>
+            <button
+              class="btn w-full justify-center !bg-[#143d29] !text-white !py-3"
+              type="submit"
+            >
+              Confirm order
+            </button>
+          </form>
+        </div>
+        <div id="ok" class="hidden text-center py-24">
+          <div
+            class="w-20 h-20 mx-auto rounded-full bg-[#143d29] text-white grid place-items-center text-4xl mb-5"
+          >
+            ✓
+          </div>
+          <h2 class="serif text-3xl font-bold mb-2">Order confirmed</h2>
+          <p class="opacity-80">
+            Thank you! We will call you shortly to confirm delivery.
+          </p>
+          <button class="btn mt-6 !bg-[#143d29] !text-white" id="ok2">
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const $ = (s) => document.querySelector(s),
+        tk = (n) => "৳" + n.toLocaleString("en-US");
+      window.fb = (e) => {
+        e.outerHTML = `<svg class="${e.className}" viewBox="0 0 120 320"><use href="#bt"/></svg>`;
+      };
+      const P = {
+        m500: { n: "Oly 500 ml", p: 1250 },
+        m1000: { n: "Oly 1000 ml", p: 2300 },
+      };
+      const I1 =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKIEJ3bmAAjsWGiNB0bWDYEEhhgI89qPg5zP7kwWZQYrKM9y9lCCfDvwvy&s=10",
+        I2 =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIwgWq12tmuLeHE9UXd0Wk7_PC__aiOmtG2r4ZAN9dXg&s=10",
+        I3 =
+          "https://foodiesfestival.com/wp-content/uploads/2023/06/UKTortilla1_lores.jpg";
+      const ic =
+        '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#lf"/></svg>';
+      const B1 = [
+        [
+          "Heart protection",
+          "Oleic acid in olive oil helps lower bad cholesterol (LDL) and raise good cholesterol (HDL), reducing the risk of heart disease and stroke.",
+        ],
+        [
+          "Reduces inflammation",
+          "Extra virgin olive oil contains oleocanthal, an antioxidant that acts like a natural pain reliever against long-term inflammation.",
+        ],
+        [
+          "Better brain function",
+          "Polyphenols and healthy fats support memory and help protect against age-related brain conditions such as Alzheimer's.",
+        ],
+        [
+          "Digestion and weight control",
+          "Fibre keeps digestion smooth and relieves constipation. In moderation, olive oil keeps you full for longer and supports weight control.",
+        ],
+        [
+          "Blood sugar control",
+          "It improves insulin sensitivity and may help lower the risk of type 2 diabetes.",
+        ],
+      ];
+      const B2 = [
+        [
+          "Locks in moisture",
+          "Vitamin E and squalene moisturise skin deeply and relieve dryness.",
+        ],
+        [
+          "Softens signs of ageing",
+          "Antioxidants protect skin cells from free-radical damage and slow the formation of wrinkles.",
+        ],
+        [
+          "Nourishes hair",
+          "Massaging the scalp reduces dandruff, strengthens roots and leaves dry hair soft and shiny.",
+        ],
+      ];
+      const IC = [
+        "M12 21s-8-5-8-11a4.5 4.5 0 018-3 4.5 4.5 0 018 3c0 6-8 11-8 11z",
+        "M12 3v18M5 8l7 4 7-4M5 16l7-4 7 4",
+        "M9 4a4 4 0 00-4 4v1a3 3 0 00-1 5 4 4 0 005 4V4zm6 0a4 4 0 014 4v1a3 3 0 011 5 4 4 0 01-5 4V4z",
+        "M4 12h16M7 6h10M7 18h10",
+        "M12 3c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z",
+        "M12 3c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z",
+        "M12 3l2 5 5 .5-4 3.5 1.5 5-4.5-3-4.5 3 1.5-5L5 8.5 10 8z",
+        "M5 19C5 9 11 4 20 4c0 9-5 15-15 15z",
+      ];
+      const ben = (a, el, o) => {
+        $(el).innerHTML = a
+          .map(
+            ([t, d], i) =>
+              `<div class="ben rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${IC[i + o]}"/></svg></div><h4 class="serif text-lg font-bold mb-2">${t}</h4><p class="text-sm leading-7 opacity-70">${d}</p></div>`,
+          )
+          .join("");
+      };
+      ben(B1, "#b1", 0);
+      ben(B2, "#b2", 5);
+      const F = [
+        [
+          "Is Oly really 100% original?",
+          "Yes. We import La Española directly from Spain and deliver it in a sealed bottle.",
+        ],
+        [
+          "Is it halal?",
+          "It is pure plant-based olive oil with no animal ingredients.",
+        ],
+        [
+          "How should I use it?",
+          "Use it for salads, light cooking, and drizzling over cooked food. Raw use keeps the most flavour and nutrients.",
+        ],
+        [
+          "How long does delivery take?",
+          "Usually 1 to 2 days inside Dhaka and 3 to 5 days elsewhere in Bangladesh.",
+        ],
+        [
+          "How many can I order?",
+          "Up to 5 of each size. Order both sizes together to get 10% off.",
+        ],
+      ];
+      $("#fq").innerHTML = F.map(
+        ([q, a]) =>
+          `<div class="faq rv"><button class="w-full text-left p-5 flex justify-between items-center gap-4 font-semibold" aria-expanded="false">${q}<span class="pl text-2xl text-[#d4b24c]">+</span></button><div class="a"><div><p class="px-5 pb-5 opacity-85 leading-7">${a}</p></div></div></div>`,
+      ).join("");
+      document.querySelectorAll(".faq button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            const f = b.parentElement,
+              was = f.classList.contains("open");
+            document.querySelectorAll(".faq").forEach((x) => {
+              x.classList.remove("open");
+              x.firstElementChild.setAttribute("aria-expanded", false);
+            });
+            if (!was) {
+              f.classList.add("open");
+              b.setAttribute("aria-expanded", true);
+            }
+          }),
+      );
+      document.querySelector(".faq button").click();
+      const img = (s, c) =>
+        `<img src="${s}" referrerpolicy="no-referrer" loading="lazy" onerror="fb(this)" class="${c}" alt="Oly olive oil">`;
+      const card = (
+        k,
+      ) => `<div class="card light p-6 flex flex-col rv"><div class="h-72 grid place-items-center rounded-2xl bg-white overflow-hidden">${img(k == "m500" ? I1 : I2, "h-full w-auto max-w-full object-contain p-3")}</div>
+<h3 class="serif text-xl font-bold mt-5">${P[k].n}</h3><p class="text-sm opacity-70">Extra virgin olive oil</p><p class="text-2xl font-bold my-3">${tk(P[k].p)}</p>
+<button class="btn !bg-[#143d29] !text-white justify-center mt-auto" data-order="${k}">Order now</button></div>`;
+      $("#pg").innerHTML =
+        card("m500") +
+        card("m1000") +
+        `<div class="card relative rv p-6 flex flex-col bg-gradient-to-br from-[#d4b24c] to-[#b8962f] text-[#0c2a1c]"><span class="absolute top-9 right-9 z-10 bg-[#0c2a1c] text-[#d4b24c] text-xs font-bold px-3 py-1 rounded-full">Save 10%</span>
+<div class="h-72 rounded-2xl overflow-hidden bg-white/30">${img(I3, "h-full w-full object-cover")}</div>
+<h3 class="serif text-xl font-bold mt-5">Combo pack</h3><p class="text-sm opacity-80">500 ml + 1000 ml</p><p class="my-3"><s class="opacity-60">${tk(3550)}</s> <b class="text-2xl">${tk(3195)}</b></p>
+<button class="btn !bg-[#0c2a1c] !text-white justify-center mt-auto" data-order="combo">Order combo</button></div>`;
+      document.querySelectorAll("main h2,#benefits h3").forEach((h) => {
+        const c = getComputedStyle(h).textAlign == "center",
+          l = h.closest(".light");
+        h.insertAdjacentHTML(
+          "afterend",
+          `<svg class="orn rv" style="margin:-.3rem ${c ? "auto" : "0"} 1.3rem;color:${l ? "#5b6a2a" : "#d4b24c"}" aria-hidden="true"><use href="#orn"/></svg>`,
+        );
+      });
+      const R = [
+        [
+          "Nusrat Jahan",
+          "Dhaka",
+          5,
+          "I switched all my daily cooking to Oly. The flavour is clean and fresh, and the bottle arrived sealed and well packed.",
+        ],
+        [
+          "Tanvir Ahmed",
+          "Chattogram",
+          5,
+          "Bought the 1000 ml for my family. It is wonderful on salads, and the price is much better than what I found in stores.",
+        ],
+        [
+          "Farhana Rahman",
+          "Sylhet",
+          4,
+          "I also use it on my hair once a week. It feels light, not greasy, and delivery was quicker than I expected.",
+        ],
+      ];
+      $("#rv3").innerHTML = R.map(
+        ([n, c, s, t]) =>
+          `<figure class="rev rv"><svg class="qm mb-3" width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 18v-5c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v7zm9 0v-5c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v7z"/></svg><div class="flex gap-1 mb-4" role="img" aria-label="${s} out of 5 stars">${[1, 2, 3, 4, 5].map((i) => `<svg width="20" height="20" style="color:${i <= s ? "#d4b24c" : "rgba(127,127,127,.35)"}" fill="currentColor"><use href="#st"/></svg>`).join("")}</div><blockquote class="leading-7 mb-6 opacity-90">${t}</blockquote><figcaption class="flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-[#143d29] text-[#d4b24c] grid place-items-center font-bold serif">${n[0]}</span><span><b class="block text-sm">${n}</b><span class="text-xs opacity-60">${c} · Verified buyer</span></span></figcaption></figure>`,
+      ).join("");
+      const sp = document.createElement("div");
+      sp.id = "sp";
+      document.body.appendChild(sp);
+      addEventListener(
+        "scroll",
+        () => {
+          sp.style.width =
+            (scrollY / (document.documentElement.scrollHeight - innerHeight)) *
+              100 +
+            "%";
+        },
+        { passive: true },
+      );
+      const hd = $("#hd"),
+        t1 = $("#t1"),
+        t2 = $("#t2");
+      const sc = () => {
+        const y = scrollY;
+        hd.style.background = y > 40 ? "rgba(7,9,7,.9)" : "transparent";
+        hd.style.backdropFilter = y > 40 ? "blur(10px)" : "none";
+        t1.style.transform = `translateX(${-y * 0.7}px)`;
+        t2.style.transform = `translateX(${y * 0.7}px)`;
+        t1.style.opacity = t2.style.opacity = Math.max(
+          0,
+          1 - y / (innerHeight * 0.8),
+        );
+      };
+      addEventListener("scroll", sc, { passive: true });
+      sc();
+      const io = new IntersectionObserver(
+        (e) =>
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              x.target.classList.add("in");
+              io.unobserve(x.target);
+            }
+          }),
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".rv").forEach((e) => io.observe(e));
+      const mm = $("#mm");
+      $("#mo").onclick = () => mm.classList.add("show");
+      $("#mc").onclick = () => mm.classList.remove("show");
+      mm.querySelectorAll("a").forEach(
+        (a) => (a.onclick = () => mm.classList.remove("show")),
+      );
+      const q = { m500: 0, m1000: 0 },
+        om = $("#om");
+      const render = () => {
+        $("#ol").innerHTML = Object.keys(P)
+          .map(
+            (k) =>
+              `<div class="flex items-center justify-between gap-3 p-3 rounded-2xl border border-black/10 bg-white"><div><b>${P[k].n}</b><div class="text-sm opacity-70">${tk(P[k].p)}</div></div><div class="flex items-center gap-2"><button type="button" class="stp" data-s="${k}" data-d="-1" aria-label="Decrease">−</button><b class="w-5 text-center">${q[k]}</b><button type="button" class="stp" data-s="${k}" data-d="1" aria-label="Increase">+</button></div></div>`,
+          )
+          .join("");
+        const st = q.m500 * P.m500.p + q.m1000 * P.m1000.p,
+          d = q.m500 && q.m1000 ? Math.round(st * 0.1) : 0;
+        $("#st").textContent = tk(st);
+        $("#ds").textContent = d ? "−" + tk(d) : "৳0";
+        $("#tt").textContent = tk(st - d);
+      };
+      $("#ol").onclick = (e) => {
+        const b = e.target.closest(".stp");
+        if (!b) return;
+        const k = b.dataset.s;
+        q[k] = Math.min(5, Math.max(0, q[k] + +b.dataset.d));
+        render();
+      };
+      document.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-order]");
+        if (!b) return;
+        const k = b.dataset.order;
+        q.m500 = q.m1000 = 0;
+        if (k == "combo") {
+          q.m500 = q.m1000 = 1;
+        } else q[k] = 1;
+        mm.classList.remove("show");
+        $("#of").classList.remove("hidden");
+        $("#ok").classList.add("hidden");
+        render();
+        om.classList.add("show");
+        document.body.style.overflow = "hidden";
+      });
+      const cl = () => {
+        om.classList.remove("show");
+        document.body.style.overflow = "";
+      };
+      $("#oc").onclick = cl;
+      $("#ok2").onclick = cl;
+      addEventListener("keydown", (e) => {
+        if (e.key == "Escape") cl();
+      });
+      $("#fo").onsubmit = (e) => {
+        e.preventDefault();
+        if (!q.m500 && !q.m1000) {
+          alert("Please choose at least one product.");
+          return;
+        }
+        $("#of").classList.add("hidden");
+        $("#ok").classList.remove("hidden");
+        e.target.reset();
+      };
+      $("#cf").onsubmit = (e) => {
+        e.preventDefault();
+        $("#cm").textContent = "Thank you! Your message has been sent.";
+        e.target.reset();
+      };
+    </script>
+  </body>
+</html>
