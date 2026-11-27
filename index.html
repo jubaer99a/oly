@@ -452,7 +452,43 @@
           transform: none;
         }
       }
+      #top-btn {
+        position: fixed;
+        right: 1rem;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+        z-index: 45;
+        width: 2.9rem;
+        height: 2.9rem;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--gold);
+        color: var(--g);
+        border: 0;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(14px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s,
+          visibility 0.3s,
+          background 0.25s;
+      }
+      #top-btn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      #top-btn:hover {
+        background: #e4c765;
+        transform: translateY(-3px);
+      }
     </style>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
   </head>
   <body>
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
@@ -766,14 +802,13 @@
               </svg>
             </div>
           </div>
-          <p class="mt-12 text-center max-w-md text-lg opacity-90">
+          <p class="mt-12 lg:mt-4 text-center max-w-md text-lg opacity-90">
             Sun-ripened Spanish olives, cold pressed into the first drop.
           </p>
-          
         </div>
         <a
           href="#about"
-          class="absolute bottom-6 left-1/2 -translate-x-1/2 bob"
+          class="absolute bottom-20 md:bottom-6 inset-x-0 mx-auto w-fit bob"
           aria-label="Scroll down"
           ><svg
             width="28"
@@ -1095,11 +1130,19 @@
               <div class="flex justify-between text-[#5b6a2a]">
                 <span>Combo discount (10%)</span><span id="ds"></span>
               </div>
+              <div class="flex justify-between">
+                <span>Delivery charge</span><span id="dc"></span>
+              </div>
               <div
                 class="flex justify-between font-bold text-lg pt-2 border-t border-black/10"
               >
                 <span>Total</span><span id="tt"></span>
               </div>
+              <p class="text-xs opacity-60" id="dcn">
+                Select your delivery area to get the exact charge.
+              </p>
+                Delivery charge is added when we confirm your order by phone.
+              </p>
             </div>
           </div>
           <form id="fo" class="space-y-3">
@@ -1122,6 +1165,10 @@
               rows="2"
               placeholder="Additional info (optional)"
             ></textarea>
+            <select class="fld" id="da" aria-label="Delivery area">
+              <option value="60" selected>Inside Dhaka — delivery ৳60</option>
+              <option value="120">Outside Dhaka — delivery ৳120</option>
+            </select>
             <fieldset>
               <legend class="font-semibold mb-2">Payment method</legend>
               <div class="grid grid-cols-3 gap-2">
@@ -1262,6 +1309,10 @@
           "Usually 1 to 2 days inside Dhaka and 3 to 5 days elsewhere in Bangladesh.",
         ],
         [
+          "What is the delivery charge?",
+          "Delivery inside Dhaka is ৳60 and outside Dhaka is ৳120. Order the combo pack (both sizes) and delivery is completely free.",
+        ],
+        [
           "How many can I order?",
           "Up to 5 of each size. Order both sizes together to get 10% off.",
         ],
@@ -1388,11 +1439,20 @@
           )
           .join("");
         const st = q.m500 * P.m500.p + q.m1000 * P.m1000.p,
-          d = q.m500 && q.m1000 ? Math.round(st * 0.1) : 0;
+          d = q.m500 && q.m1000 ? Math.round(st * 0.1) : 0,
+          free = q.m500 && q.m1000,
+          dc = free ? 0 : +$("#da").value;
         $("#st").textContent = tk(st);
         $("#ds").textContent = d ? "−" + tk(d) : "৳0";
-        $("#tt").textContent = tk(st - d);
+        $("#dc").innerHTML = free
+          ? '<b class="text-[#5b6a2a]">FREE</b>'
+          : tk(dc);
+        $("#tt").textContent = tk(st - d + dc);
+        $("#dcn").textContent = free
+          ? "Combo order — you got free delivery!"
+          : "Select your delivery area to get the exact charge.";
       };
+      $("#da").onchange = render;
       $("#ol").onclick = (e) => {
         const b = e.target.closest(".stp");
         if (!b) return;
@@ -1439,6 +1499,18 @@
         $("#cm").textContent = "Thank you! Your message has been sent.";
         e.target.reset();
       };
+      const tb = document.createElement("button");
+      tb.id = "top-btn";
+      tb.setAttribute("aria-label", "Back to top");
+      tb.innerHTML =
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+      document.body.appendChild(tb);
+      tb.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+      addEventListener(
+        "scroll",
+        () => tb.classList.toggle("show", scrollY > 500),
+        { passive: true },
+      );
     </script>
   </body>
 </html>
